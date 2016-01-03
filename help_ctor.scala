@@ -23,6 +23,8 @@ class Rational(n: Int, d: Int){
 				denom * that.denom
 			)
 
+	def *(i: Int): Rational = 
+		new Rational(number*i, denom)
 
 	def +(that: Rational):Rational = 
 		new Rational(
@@ -50,3 +52,9 @@ println("最大公约数 ", gcd)
 println("加＋ ", rat1+rat2)
 
 println("乘法* ", rat1*rat2)
+
+println(" 2 *", rat1*2)
+
+implicit def intToRational(x: Int) = new Rational(x)
+val rat3 = 2 * rat1
+println(" 2* ", rat3)
